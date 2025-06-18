@@ -32,13 +32,29 @@ export function AppSidebar() {
 
     const mainNavItems: NavItem[] = [
         {
+            title: 'Booking',
+            icon: BookmarkCheck,
+            items: [
+                {
+                    title: 'Manage Booking List',
+                    href: '/list-booking',
+                    icon: NotebookIcon,
+                },
+                {
+                    title: 'Add Booking',
+                    href: '/add-booking',
+                    icon: PlusSquare,
+                },
+            ],
+        },
+    ];
+    
+    const adminNavItems: NavItem[] = [
+        {
             title: 'Dashboard',
             href: '/dashboard',
             icon: LayoutGrid,
         },
-    ];
-
-    const adminNavItems: NavItem[] = [
         {
             title: 'Services',
             icon: MonitorCogIcon,
@@ -74,7 +90,7 @@ export function AppSidebar() {
     ];
 
     const navItems = userRole === 'admin'
-        ? [...mainNavItems, ...adminNavItems]
+        ? [...adminNavItems]
         : [...mainNavItems];
 
     const { url: currentPath } = usePage();

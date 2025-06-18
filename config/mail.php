@@ -95,6 +95,7 @@ return [
             ],
         ],
 
+        'from' => ['address' => 'alfan@example.com', 'name' => 'Service Anything']
     ],
 
     /*
